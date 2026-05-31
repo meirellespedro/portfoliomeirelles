@@ -290,25 +290,30 @@ a {
 
 .hero-kicker {
   display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;             /* FIX: pode quebrar em telas estreitas */
-  max-width: 100%;             /* FIX: não estoura a largura do pai (evita overflow-x) */
+  align-items: flex-start;     /* FIX bolinha: ancora itens no topo p/ a bolinha colar na 1ª linha */
+  flex-wrap: nowrap;           /* bolinha fica fixa; o texto ocupa o resto e quebra internamente */
+  max-width: 100%;             /* não estoura a largura do pai (evita overflow-x) */
   gap: 8px;
   margin-bottom: 18px;
-  padding: 7px 14px;
+  padding: 8px 14px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface);
   color: var(--text-muted);
   font-size: 0.85rem;
+  line-height: 1.45;           /* altura de linha controlada p/ centralizar a bolinha com precisão */
 }
-.hero-kicker::before {
-  content: "";
+/* Bolinha "disponível": elemento real (não ::before) p/ controlar o alinhamento.
+   margin-top centra a bolinha (8px) na 1ª linha de texto, mesmo quando o texto
+   quebra em 2 linhas no mobile — antes ela flutuava no meio vertical do bloco. */
+.hero-kicker-dot {
+  flex: 0 0 8px;               /* nunca encolhe nem cresce: 8px fixos */
   width: 8px;
   height: 8px;
+  margin-top: calc((1.45em - 8px) / 2);
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(49, 204, 8, 0.18);
+  box-shadow: 0 0 0 4px var(--accent-soft);
 }
 
 .hero h1 {
