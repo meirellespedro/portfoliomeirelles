@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="img/logotipo-favicon.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="img/logotipo-favicon.png" type="image/png" sizes="16x16">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Pedro Meirelles — desenvolvedor Front-End com fundamentos de back-end. Crio sites e aplicações web modernas, rápidas e responsivas com HTML, CSS, JavaScript, PHP e MySQL.">
+  <meta name="theme-color" content="#0d1117">
+
+  <!-- Vira a chave no-js→js ANTES do CSS pintar, evitando flash do reveal-on-scroll -->
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+
+  <!-- Open Graph: como o link aparece ao ser compartilhado (LinkedIn, WhatsApp) -->
+  <meta property="og:title" content="Pedro Meirelles | Front-End Developer">
+  <meta property="og:description" content="Sites e aplicações web modernas e responsivas — Front-End sólido com fundamentos de back-end (PHP e MySQL).">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="img/logotipo-favicon.png" type="image/png">
+
+  <!-- preconnect: abre a conexão com o Google Fonts antes do CSS pedir a fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="style.css">
 
@@ -13,198 +27,368 @@
 </head>
 
 <body>
+  <!-- FIX 2: skip link — primeiro elemento focável; pula direto ao conteúdo -->
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
   <header class="header">
     <div class="container">
-      <div class="logo">
-        <img src="img/logotipo2.png" alt="Pedro Meirelles">
-      </div>
+      <!-- Logo agora é link para o topo (convenção de UX) -->
+      <a href="#hero" class="logo" aria-label="Pedro Meirelles — início">
+        <img src="img/logotipo-nav.png" alt="Pedro Meirelles" width="540" height="258">
+      </a>
 
-      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-list">
+      <button class="menu-toggle" id="menu-toggle" type="button"
+              aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-list">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav class="menu">
+      <nav class="menu" aria-label="Navegação principal">
         <ul id="menu-list">
-          <li><a href="#hero">Inicio</a></li>
-          <li><a href="#servicos">Servicos</a></li>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
           <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#stack">Stack</a></li>
           <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
 
-      <a href="https://wa.me/5521973196864" target="_blank" rel="noopener noreferrer" class="btn">Contato</a>
+      <a href="https://wa.me/5521973196864" target="_blank" rel="noopener noreferrer" class="btn">Fale comigo</a>
     </div>
   </header>
 
-  <section id="hero" class="hero">
-    <div class="container flex">
-      <div class="hero-text">
-        <p class="hero-kicker">Front-End Developer | Disponivel para oportunidades</p>
-        <h1>Crio sites modernos, rapidos e que geram resultados<span>.</span></h1>
+  <main id="main" tabindex="-1">
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-text" data-reveal>
+          <p class="hero-kicker">Front-End Developer · Disponível para oportunidades</p>
+          <h1>Crio sites modernos, rápidos e que geram resultados<span>.</span></h1>
 
-        <p class="subtitulo">
-          Desenvolvedor Front-End com foco em performance, responsividade e interfaces profissionais que causam boa impressao em usuarios, clientes e recrutadores.
-        </p>
+          <p class="subtitulo">
+            Desenvolvedor Front-End com foco em performance, responsividade e interfaces
+            profissionais — e construindo base de back-end com PHP e MySQL para evoluir
+            rumo ao full-stack.
+          </p>
 
-        <div class="hero-highlights">
-          <span>HTML, CSS e JavaScript</span>
-          <span>Projetos responsivos</span>
-          <span>Perfil colaborativo</span>
-        </div>
-
-        <div class="hero-buttons">
-          <a href="#projetos" class="btn">Ver projetos</a>
-          <a href="https://wa.me/5521973196864" target="_blank" rel="noopener noreferrer" class="btn-outline">Fale comigo</a>
-          <a href="https://www.linkedin.com/in/pedromei2019" target="_blank" rel="noopener noreferrer" class="btn-outline">LinkedIn</a>
-          <a href="https://github.com/meirellespedro" target="_blank" rel="noopener noreferrer" class="btn-outline">GitHub</a>
-        </div>
-      </div>
-
-      <div class="hero-img">
-        <img src="img/pedro1.png" alt="Pedro Meirelles">
-      </div>
-    </div>
-  </section>
-
-  <section class="prova">
-    <div class="container">
-      <h2>O que voce pode esperar</h2>
-
-      <ul>
-        <li>Sites rapidos e otimizados</li>
-        <li>Design moderno e profissional</li>
-        <li>Experiencia perfeita no celular</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="servicos" class="servicos">
-    <div class="container">
-      <h2>Como posso ajudar seu negocio</h2>
-
-      <div class="cards">
-        <div class="card">
-          <i class="bi bi-code-square"></i>
-          <h3>Sites Profissionais</h3>
-          <p>Criacao de sites modernos, rapidos e alinhados com sua marca.</p>
-        </div>
-
-        <div class="card">
-          <i class="bi bi-graph-up"></i>
-          <h3>Landing Pages</h3>
-          <p>Paginas estrategicas focadas em conversao e geracao de clientes.</p>
-        </div>
-
-        <div class="card">
-          <i class="bi bi-phone"></i>
-          <h3>Responsividade</h3>
-          <p>Seu site perfeito em qualquer dispositivo, com foco em mobile.</p>
-        </div>
-
-        <div class="card">
-          <i class="bi bi-speedometer2"></i>
-          <h3>Performance</h3>
-          <p>Sites rapidos que melhoram experiencia e SEO.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projetos" class="projetos">
-    <div class="container">
-      <h2>Projetos</h2>
-
-      <div class="grid-projetos">
-        <div class="projeto">
-          <img src="img/connectvagas.jpg" alt="Connect Vagas">
-          <h3>Connect Vagas</h3>
-          <p>Plataforma web para conexao entre empresas e candidatos, com foco em usabilidade e navegacao simples.</p>
-
-          <div class="tecnologias">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
+          <div class="hero-highlights">
+            <span>HTML, CSS e JavaScript</span>
+            <span>PHP e MySQL</span>
+            <span>Projetos responsivos</span>
           </div>
 
-          <div class="botoes">
-            <a href="#" target="_blank" rel="noopener noreferrer">Ver codigo</a>
+          <div class="hero-buttons">
+            <a href="#projetos" class="btn">Ver projetos</a>
+            <a href="https://www.linkedin.com/in/pedromei2019" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              <i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn
+            </a>
+            <a href="https://github.com/meirellespedro" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              <i class="bi bi-github" aria-hidden="true"></i> GitHub
+            </a>
           </div>
         </div>
 
-        <div class="projeto">
-          <img src="img/cadastroagil.jpg" alt="Cadastro Agil">
-          <h3>Cadastro Agil</h3>
-          <p>Sistema web para cadastro rapido de usuarios com foco em produtividade e organizacao de dados.</p>
-
-          <div class="tecnologias">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-
-          <div class="botoes">
-            <a href="https://github.com/meirellespedro/Cadastro-gil" target="_blank" rel="noopener noreferrer">Ver codigo</a>
-          </div>
+        <div class="hero-img" data-reveal>
+          <img src="img/pedro1.png" alt="Foto de Pedro Meirelles" width="400" height="400">
         </div>
+      </div>
+    </section>
 
-        <div class="projeto">
-          <img src="img/grafica.png" alt="Grafica EF Soares">
-          <h3>Grafica EF Soares</h3>
-          <p>Site institucional com foco em conversao e contato direto via WhatsApp.</p>
-
-          <div class="tecnologias">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
+    <section class="prova" aria-label="Diferenciais">
+      <div class="container">
+        <div class="prova-grid">
+          <div class="prova-item" data-reveal>
+            <i class="bi bi-lightning-charge" aria-hidden="true"></i>
+            <span>Sites rápidos e otimizados</span>
           </div>
-
-          <div class="botoes">
-            <a href="https://github.com/meirellespedro/graficaEFSoares" target="_blank" rel="noopener noreferrer">Ver codigo</a>
+          <div class="prova-item" data-reveal>
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            <span>Design moderno e profissional</span>
+          </div>
+          <div class="prova-item" data-reveal>
+            <i class="bi bi-phone" aria-hidden="true"></i>
+            <span>Experiência perfeita no celular</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="sobre" class="sobre">
-    <div class="container flex">
-      <div class="sobre-img">
-        <img src="img/pedro2.png" alt="Pedro Meirelles">
-      </div>
+    <section id="servicos" class="servicos">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Serviços</span>
+          <h2>Como posso ajudar seu negócio</h2>
+          <p>Soluções front-end pensadas para velocidade, conversão e uma ótima experiência em qualquer tela.</p>
+        </div>
 
-      <div class="sobre-text">
-        <h2>Sobre mim</h2>
+        <div class="cards">
+          <article class="card" data-reveal>
+            <i class="bi bi-code-square" aria-hidden="true"></i>
+            <h3>Sites Profissionais</h3>
+            <p>Criação de sites modernos, rápidos e alinhados com a sua marca.</p>
+          </article>
 
-        <p>Sou desenvolvedor Front-End focado em criar interfaces modernas, rapidas e eficientes.</p>
-        <p>Meu objetivo e ajudar empresas a se posicionarem melhor no digital atraves de sites que realmente geram resultados, enquanto construo uma base solida para atuar em equipes de tecnologia com qualidade, organizacao e vontade de evoluir.</p>
+          <article class="card" data-reveal>
+            <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+            <h3>Landing Pages</h3>
+            <p>Páginas estratégicas focadas em conversão e geração de clientes.</p>
+          </article>
 
-        <div class="social">
-          <a href="https://www.instagram.com/devmeirelles/" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/pedromei2019" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/meirellespedro" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+          <article class="card" data-reveal>
+            <i class="bi bi-phone" aria-hidden="true"></i>
+            <h3>Responsividade</h3>
+            <p>Seu site perfeito em qualquer dispositivo, com foco em mobile.</p>
+          </article>
+
+          <article class="card" data-reveal>
+            <i class="bi bi-speedometer2" aria-hidden="true"></i>
+            <h3>Performance</h3>
+            <p>Sites rápidos que melhoram a experiência e o SEO.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contato" class="contato">
-    <div class="container">
-      <h2>Vamos criar algo incrivel juntos?</h2>
-      <p>Se voce precisa de um site profissional que gere resultados, me chama.</p>
-      <div class="contact-actions">
-        <a href="https://wa.me/5521973196864" target="_blank" rel="noopener noreferrer" class="btn">Fale comigo no WhatsApp</a>
-        <a href="https://www.linkedin.com/in/pedromei2019" target="_blank" rel="noopener noreferrer" class="btn-outline">Conecte-se no LinkedIn</a>
-        <a href="https://github.com/meirellespedro" target="_blank" rel="noopener noreferrer" class="btn-outline">Veja meu GitHub</a>
+    <section id="projetos" class="projetos">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Projetos</span>
+          <h2>Trabalhos selecionados</h2>
+          <p>Projetos reais — de site institucional a front-end com persistência e back-end em PHP com banco de dados.</p>
+        </div>
+
+        <div class="grid-projetos">
+          <!-- Aprova+ -->
+          <article class="projeto" data-reveal>
+            <div class="projeto-media">
+              <img src="img/aprova-mais.png?v=20260530" alt="Painel do Aprova+, plataforma de estudos para ENEM e UERJ"
+                   loading="lazy" decoding="async">
+            </div>
+            <div class="projeto-body">
+              <h3>Aprova+</h3>
+              <p>Plataforma de estudos para ENEM e UERJ com planner semanal, timer Pomodoro,
+                 acompanhamento de progresso, simulados e <strong>correção de redação por IA</strong> —
+                 que avalia o texto competência por competência (padrão ENEM/UERJ) via API do Gemini,
+                 com a chave protegida numa função serverless. Sem cadastro, dados salvos no navegador.</p>
+
+              <div class="tecnologias">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>PWA</span>
+                <span>IA · Gemini</span>
+                <span>Serverless</span>
+                <span>Prompt Engineering</span>
+              </div>
+
+              <div class="botoes">
+                <a class="projeto-link primary" href="https://aprova-mais.pages.dev/" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver site
+                </a>
+                <a class="projeto-link ghost" href="https://github.com/meirellespedro/aprova-mais" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github" aria-hidden="true"></i> Ver código
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Galaxy Burger -->
+          <article class="projeto" data-reveal>
+            <div class="projeto-media">
+              <img src="img/galaxyburger.png?v=20260515" alt="Site Galaxy Burger, com identidade visual espacial e cardápio digital"
+                   loading="lazy" decoding="async">
+            </div>
+            <div class="projeto-body">
+              <h3>Galaxy Burger</h3>
+              <p>Site real desenvolvido para cliente, com identidade visual espacial, cardápio
+                 digital e fluxo de pedido pensado para conversão.</p>
+
+              <div class="tecnologias">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+
+              <div class="botoes">
+                <a class="projeto-link primary" href="https://galaxyburger.vercel.app" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver site
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cadastro-gil (back-end) -->
+          <article class="projeto" data-reveal>
+            <!-- Capa ILUSTRATIVA em CSS (mockup da tela de login) — não é screenshot.
+                 aria-hidden: é decorativa, o texto do card já descreve o projeto. -->
+            <div class="projeto-media projeto-media--mock">
+              <div class="mock-login" aria-hidden="true">
+                <span class="mock-avatar"><i class="bi bi-person"></i></span>
+                <span class="mock-field"><i class="bi bi-envelope"></i></span>
+                <span class="mock-field"><i class="bi bi-lock"></i></span>
+                <span class="mock-btn">Entrar</span>
+              </div>
+            </div>
+            <div class="projeto-body">
+              <h3>Cadastro-gil</h3>
+              <p>Sistema de cadastro e login em PHP + MySQL com foco em segurança: senhas
+                 protegidas com hash (<code>password_hash</code>) e queries com prepared
+                 statements — defesa contra SQL Injection.</p>
+
+              <div class="tecnologias">
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>Prepared Statements</span>
+                <span>password_hash()</span>
+              </div>
+
+              <div class="botoes">
+                <a class="projeto-link ghost" href="https://github.com/meirellespedro/Cadastro-gil" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github" aria-hidden="true"></i> Ver código
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="stack" class="stack">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Stack</span>
+          <h2>Tecnologias que uso</h2>
+          <p>Organizadas com honestidade: o que já domino no dia a dia e o que estou construindo agora.</p>
+        </div>
+
+        <div class="stack-grid">
+          <!-- Grupo sólido: onde estão os projetos reais publicados -->
+          <article class="stack-card" data-reveal>
+            <div class="stack-card-head">
+              <i class="bi bi-window-stack" aria-hidden="true"></i>
+              <div>
+                <h3>Front-End</h3>
+                <span class="stack-level stack-level--solid">Sólido — projetos publicados</span>
+              </div>
+            </div>
+            <ul class="stack-tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Responsividade</li>
+              <li>Acessibilidade</li>
+              <li>Performance</li>
+            </ul>
+          </article>
+
+          <!-- IA: correção de redação por IA já no ar no Aprova+ (Gemini + serverless) -->
+          <article class="stack-card" data-reveal>
+            <div class="stack-card-head">
+              <i class="bi bi-robot" aria-hidden="true"></i>
+              <div>
+                <h3>IA &amp; Integrações</h3>
+                <span class="stack-level stack-level--solid">Aplicado em projeto real</span>
+              </div>
+            </div>
+            <ul class="stack-tags">
+              <li>API Gemini</li>
+              <li>Prompt Engineering</li>
+              <li>Serverless Functions</li>
+              <li>Saída estruturada</li>
+            </ul>
+          </article>
+
+          <!-- Grupo em evolução: enquadramento honesto, sem prometer demais -->
+          <article class="stack-card" data-reveal>
+            <div class="stack-card-head">
+              <i class="bi bi-database" aria-hidden="true"></i>
+              <div>
+                <h3>Back-End &amp; Banco</h3>
+                <span class="stack-level stack-level--growing">Em evolução — fundamentos aplicados</span>
+              </div>
+            </div>
+            <ul class="stack-tags">
+              <li>PHP</li>
+              <li>MySQL</li>
+              <li>Prepared Statements</li>
+              <li>password_hash()</li>
+              <li>SQL básico</li>
+            </ul>
+          </article>
+
+          <!-- Ferramentas de versionamento e deploy — transversais a qualquer stack -->
+          <article class="stack-card" data-reveal>
+            <div class="stack-card-head">
+              <i class="bi bi-git" aria-hidden="true"></i>
+              <div>
+                <h3>Versionamento &amp; Deploy</h3>
+                <span class="stack-level stack-level--solid">Uso no dia a dia</span>
+              </div>
+            </div>
+            <ul class="stack-tags">
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>Vercel</li>
+              <li>Cloudflare Pages</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="sobre">
+      <div class="container">
+        <div class="sobre-img" data-reveal>
+          <img src="img/pedro2.png" alt="Pedro Meirelles em foto de perfil" loading="lazy" width="340" height="510">
+        </div>
+
+        <div class="sobre-text" data-reveal>
+          <span class="eyebrow">Sobre mim</span>
+          <h2>Quem está por trás do código</h2>
+          <p>Sou desenvolvedor Front-End focado em criar interfaces modernas, rápidas e eficientes.</p>
+          <p>Meu objetivo é ajudar empresas a se posicionarem melhor no digital através de sites que
+             realmente geram resultados, enquanto construo uma base sólida para atuar em equipes de
+             tecnologia com qualidade, organização e vontade de evoluir.</p>
+
+          <div class="social">
+            <a href="https://www.instagram.com/devmeirelles/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Pedro Meirelles">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/pedromei2019" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Pedro Meirelles">
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/meirellespedro" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Pedro Meirelles">
+              <i class="bi bi-github" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="contato">
+      <div class="container" data-reveal>
+        <h2>Vamos criar algo incrível juntos?</h2>
+        <p>Se você precisa de um site profissional que gere resultados, me chama.</p>
+        <div class="contact-actions">
+          <a href="https://wa.me/5521973196864" target="_blank" rel="noopener noreferrer" class="btn">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i> Fale comigo no WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/in/pedromei2019" target="_blank" rel="noopener noreferrer" class="btn-outline">
+            <i class="bi bi-linkedin" aria-hidden="true"></i> Conecte-se no LinkedIn
+          </a>
+          <a href="https://github.com/meirellespedro" target="_blank" rel="noopener noreferrer" class="btn-outline">
+            <i class="bi bi-github" aria-hidden="true"></i> Veja meu GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container">
-      <img src="img/logotipo2.png" alt="Pedro Meirelles">
-      <p>&copy; 2026 Pedro Meirelles - Todos os direitos reservados</p>
+      <img src="img/logotipo-nav.png" alt="Pedro Meirelles" width="540" height="258" loading="lazy">
+      <p>&copy; 2026 Pedro Meirelles — Todos os direitos reservados</p>
     </div>
   </footer>
 
