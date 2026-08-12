@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pedro Meirelles — desenvolvedor Full-Stack. Crio aplicações web completas, rápidas e responsivas com HTML, CSS, JavaScript, PHP, MySQL e integração de IA.">
+  <meta name="description" content="Pedro Meirelles — desenvolvedor Full-Stack. Crio aplicações web e desktop com React, Node.js, PHP, TypeScript e Electron, com integração de IA e automação com Playwright.">
   <meta name="theme-color" content="#0d1117">
 
   <!-- Vira a chave no-js→js ANTES do CSS pintar, evitando flash do reveal-on-scroll -->
@@ -11,7 +11,7 @@
 
   <!-- Open Graph: como o link aparece ao ser compartilhado (LinkedIn, WhatsApp) -->
   <meta property="og:title" content="Pedro Meirelles | Desenvolvedor Full-Stack">
-  <meta property="og:description" content="Aplicações web completas e responsivas — front-end, back-end (PHP e MySQL) e integração de IA.">
+  <meta property="og:description" content="Aplicações web e desktop — front-end com React, back-end em Node.js e PHP, apps Electron e integração de IA.">
   <meta property="og:type" content="website">
 
   <link rel="icon" href="img/logotipo-favicon.png" type="image/png">
@@ -50,6 +50,8 @@
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#projetos">Projetos</a></li>
           <li><a href="#stack">Stack</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#formacao">Formação</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
@@ -68,13 +70,15 @@
 
           <p class="subtitulo">
             Desenvolvedor Full-Stack: construo a interface que o usuário vê e a lógica que roda
-            por trás — do front-end responsivo ao back-end em PHP e MySQL, com integração de IA.
-            Foco em performance, acessibilidade e código limpo.
+            por trás — de aplicações desktop em Electron a web apps com React, Node.js e PHP,
+            com integração de IA e automação com Playwright. Foco em performance,
+            acessibilidade e código limpo.
           </p>
 
           <div class="hero-highlights">
-            <span>Front-End responsivo</span>
-            <span>Back-End em PHP &amp; MySQL</span>
+            <span>Front-End com React</span>
+            <span>Back-End em Node.js &amp; PHP</span>
+            <span>Apps Desktop com Electron</span>
             <span>Integração de IA</span>
           </div>
 
@@ -83,7 +87,7 @@
             <a href="curriculo-pedro-meirelles.pdf" download class="btn-outline">
               <i class="bi bi-file-earmark-arrow-down" aria-hidden="true"></i> Baixar currículo
             </a>
-            <a href="https://www.linkedin.com/in/pedromei2019" target="_blank" rel="noopener noreferrer" class="btn-outline">
+            <a href="https://www.linkedin.com/in/pedro-meirelles-almeida" target="_blank" rel="noopener noreferrer" class="btn-outline">
               <i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn
             </a>
             <a href="https://github.com/meirellespedro" target="_blank" rel="noopener noreferrer" class="btn-outline">
@@ -158,10 +162,47 @@
         <div class="section-head" data-reveal>
           <span class="eyebrow">Projetos</span>
           <h2>Trabalhos selecionados</h2>
-          <p>Projetos reais — de site comercial a aplicação com back-end em PHP, banco de dados e integração de IA.</p>
+          <p>Projetos reais — de produto desktop comercial a sites com back-end, banco de dados e integração de IA.</p>
         </div>
 
         <div class="grid-projetos">
+          <!-- QAP PROEIS -->
+          <article class="projeto" data-reveal>
+            <div class="projeto-media projeto-media--mock">
+              <!-- Capa ILUSTRATIVA em CSS (mockup de janela desktop) — produto comercial fechado,
+                   sem screenshot público. aria-hidden: decorativa, o texto do card já descreve o projeto. -->
+              <div class="mock-window" aria-hidden="true">
+                <div class="mock-window-bar">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mock-window-body">
+                  <i class="bi bi-robot"></i>
+                  <div class="mock-window-line"></div>
+                  <div class="mock-window-line short"></div>
+                </div>
+              </div>
+            </div>
+            <div class="projeto-body">
+              <span class="projeto-badge">Produto comercial · Em produção</span>
+              <h3>QAP PROEIS</h3>
+              <p>Aplicação desktop comercial que automatiza o preenchimento repetitivo de
+                 formulários web com <strong>Playwright</strong>, eliminando um fluxo manual e
+                 erros de digitação. Checkout e liberação de licença via API do Mercado Pago
+                 (OAuth 2.0), com dados persistidos no Supabase/PostgreSQL. Testes com Vitest e
+                 instalador empacotado com electron-builder.</p>
+
+              <div class="tecnologias">
+                <span>Electron</span>
+                <span>TypeScript</span>
+                <span>React</span>
+                <span>Playwright</span>
+                <span>Mercado Pago API</span>
+                <span>Supabase</span>
+                <span>Vitest</span>
+              </div>
+            </div>
+          </article>
+
           <!-- Aprova+ -->
           <article class="projeto" data-reveal>
             <div class="projeto-media">
@@ -224,17 +265,11 @@
             </div>
           </article>
 
-          <!-- Cadastro-gil (back-end) -->
+          <!-- Cadastro Ágil (back-end) -->
           <article class="projeto" data-reveal>
-            <!-- Capa ILUSTRATIVA em CSS (mockup da tela de login) — não é screenshot.
-                 aria-hidden: é decorativa, o texto do card já descreve o projeto. -->
-            <div class="projeto-media projeto-media--mock">
-              <div class="mock-login" aria-hidden="true">
-                <span class="mock-avatar"><i class="bi bi-person"></i></span>
-                <span class="mock-field"><i class="bi bi-envelope"></i></span>
-                <span class="mock-field"><i class="bi bi-lock"></i></span>
-                <span class="mock-btn">Entrar</span>
-              </div>
+            <div class="projeto-media">
+              <img src="img/cadastroagil.jpg" alt="Tela de login do sistema Cadastro Ágil"
+                   loading="lazy" decoding="async">
             </div>
             <div class="projeto-body">
               <h3>Cadastro Ágil</h3>
@@ -282,13 +317,16 @@
               <li>HTML</li>
               <li>CSS</li>
               <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React</li>
               <li>Responsividade</li>
               <li>Acessibilidade</li>
               <li>Performance</li>
             </ul>
           </article>
 
-          <!-- IA: correção de redação por IA já no ar no Aprova+ (Gemini + serverless) -->
+          <!-- IA: correção de redação por IA já no ar no Aprova+ (Gemini + serverless) e
+               ferramentas de desenvolvimento assistido usadas no dia a dia -->
           <article class="stack-card" data-reveal>
             <div class="stack-card-head">
               <i class="bi bi-robot" aria-hidden="true"></i>
@@ -301,11 +339,13 @@
               <li>API Gemini</li>
               <li>Prompt Engineering</li>
               <li>Serverless Functions</li>
-              <li>Saída estruturada</li>
+              <li>Claude Code</li>
+              <li>Codex</li>
+              <li>Cursor</li>
             </ul>
           </article>
 
-          <!-- Back-end real: Cadastro-gil (PHP/MySQL) + funções serverless no Aprova+ -->
+          <!-- Back-end real: QAP PROEIS (Supabase/PostgreSQL) + Cadastro Ágil (PHP/MySQL) -->
           <article class="stack-card" data-reveal>
             <div class="stack-card-head">
               <i class="bi bi-database" aria-hidden="true"></i>
@@ -315,11 +355,30 @@
               </div>
             </div>
             <ul class="stack-tags">
+              <li>Node.js</li>
+              <li>Express</li>
               <li>PHP</li>
+              <li>APIs RESTful</li>
+              <li>PostgreSQL / Supabase</li>
               <li>MySQL</li>
               <li>Prepared Statements</li>
-              <li>password_hash()</li>
-              <li>SQL básico</li>
+            </ul>
+          </article>
+
+          <!-- Desktop e automação: QAP PROEIS (Electron + Playwright + Vitest) -->
+          <article class="stack-card" data-reveal>
+            <div class="stack-card-head">
+              <i class="bi bi-window-desktop" aria-hidden="true"></i>
+              <div>
+                <h3>Desktop &amp; Automação</h3>
+                <span class="stack-level stack-level--solid">Aplicado em projeto real</span>
+              </div>
+            </div>
+            <ul class="stack-tags">
+              <li>Electron</li>
+              <li>Playwright</li>
+              <li>Vitest</li>
+              <li>electron-builder</li>
             </ul>
           </article>
 
@@ -343,6 +402,66 @@
       </div>
     </section>
 
+    <section id="experiencia" class="experiencia">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Experiência</span>
+          <h2>Trajetória profissional</h2>
+          <p>Vivência com produção de conteúdo apoiada por IA generativa, em ambiente corporativo.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item" data-reveal>
+            <div class="timeline-head">
+              <h3>Estagiário de TI</h3>
+              <span class="timeline-period">Jun 2025 – Set 2025</span>
+            </div>
+            <p class="timeline-org">BMS Service</p>
+            <ul class="timeline-list">
+              <li>Produção de conteúdo, peças visuais e edição de vídeos para as redes sociais dos projetos institucionais da empresa.</li>
+              <li>Materiais gráficos e apresentações com apoio de IA generativa, encurtando o ciclo de produção e entrega.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="formacao" class="formacao">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Formação</span>
+          <h2>Formação acadêmica &amp; certificações</h2>
+          <p>Base técnica em construção contínua, com estudo formal e certificações complementares.</p>
+        </div>
+
+        <div class="formacao-grid">
+          <div class="timeline">
+            <article class="timeline-item" data-reveal>
+              <div class="timeline-head">
+                <h3>Análise e Desenvolvimento de Sistemas</h3>
+                <span class="timeline-period">2026 – 2028</span>
+              </div>
+              <p class="timeline-org">UERJ / UERJ-ZO</p>
+            </article>
+
+            <article class="timeline-item" data-reveal>
+              <div class="timeline-head">
+                <h3>Técnico em Informática</h3>
+                <span class="timeline-period">2023 – 2024</span>
+              </div>
+              <p class="timeline-org">ETERJ</p>
+            </article>
+          </div>
+
+          <ul class="cert-list" data-reveal>
+            <li><i class="bi bi-patch-check" aria-hidden="true"></i> Masterizando IA Generativa · Adapta</li>
+            <li><i class="bi bi-patch-check" aria-hidden="true"></i> MTA: HTML and CSS · Microsoft / Fundação Bradesco</li>
+            <li><i class="bi bi-patch-check" aria-hidden="true"></i> MTA: JavaScript · Microsoft / IFRS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="sobre" class="sobre">
       <div class="container">
         <div class="sobre-img" data-reveal>
@@ -353,15 +472,17 @@
           <span class="eyebrow">Sobre mim</span>
           <h2>Quem está por trás do código</h2>
           <p>Sou desenvolvedor Full-Stack: crio a interface que o usuário vê e a lógica que roda por
-             trás — do front-end responsivo ao back-end com PHP, MySQL e integração de IA.</p>
-          <p>Estudo Análise e Desenvolvimento de Sistemas e busco um estágio onde eu possa contribuir
-             em um time técnico, aprofundar boas práticas e crescer como desenvolvedor full-stack.</p>
+             trás — de aplicações desktop em Electron a web apps com React, Node.js e PHP, com
+             bancos de dados SQL e integração de IA.</p>
+          <p>Estudo Análise e Desenvolvimento de Sistemas na UERJ e busco um estágio onde eu possa
+             contribuir em um time técnico, aprofundar boas práticas e crescer como desenvolvedor
+             full-stack.</p>
 
           <div class="social">
             <a href="https://www.instagram.com/devmeirelles/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Pedro Meirelles">
               <i class="bi bi-instagram" aria-hidden="true"></i>
             </a>
-            <a href="https://www.linkedin.com/in/pedromei2019" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Pedro Meirelles">
+            <a href="https://www.linkedin.com/in/pedro-meirelles-almeida" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Pedro Meirelles">
               <i class="bi bi-linkedin" aria-hidden="true"></i>
             </a>
             <a href="https://github.com/meirellespedro" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Pedro Meirelles">
@@ -383,7 +504,7 @@
           <a href="curriculo-pedro-meirelles.pdf" download class="btn-outline">
             <i class="bi bi-file-earmark-arrow-down" aria-hidden="true"></i> Baixar currículo (PDF)
           </a>
-          <a href="https://www.linkedin.com/in/pedromei2019" target="_blank" rel="noopener noreferrer" class="btn-outline">
+          <a href="https://www.linkedin.com/in/pedro-meirelles-almeida" target="_blank" rel="noopener noreferrer" class="btn-outline">
             <i class="bi bi-linkedin" aria-hidden="true"></i> Conecte-se no LinkedIn
           </a>
           <a href="https://github.com/meirellespedro" target="_blank" rel="noopener noreferrer" class="btn-outline">

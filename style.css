@@ -126,6 +126,10 @@ a {
 }
 
 .header .container {
+  /* Nav com logo + 8 links + CTA precisa de mais fôlego que o --maxw
+     do conteúdo (1180px) permite — trava a largura do header à parte
+     para não espremer o CTA numa tela larga. */
+  --maxw: 1320px;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -248,6 +252,8 @@ a {
 .hero,
 .servicos,
 .projetos,
+.experiencia,
+.formacao,
 .sobre,
 .contato {
   padding: var(--space-section) 0;
@@ -517,8 +523,8 @@ a {
   font-size: 0.82em;
 }
 
-/* Capa ILUSTRATIVA do card de back-end — mockup de tela de login em CSS puro,
-   não um screenshot. Reusa o container .projeto-media (aspect-ratio 16/10). */
+/* Capa ILUSTRATIVA de projeto sem screenshot — mockup em CSS puro.
+   Reusa o container .projeto-media (aspect-ratio 16/10). */
 .projeto-media--mock {
   display: grid;
   place-items: center;
@@ -526,58 +532,65 @@ a {
     radial-gradient(420px 220px at 50% 0%, var(--accent-soft), transparent 70%),
     var(--surface-2);
 }
-.mock-login {
+
+/* Mockup de janela desktop (QAP PROEIS) — produto comercial fechado, sem capa real */
+.mock-window {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: min(64%, 210px);
-  padding: 18px;
+  width: min(78%, 260px);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--bg-elev);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
 }
-.mock-avatar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  border: 1px solid var(--accent-border);
-  color: var(--accent);
-  font-size: 1.2rem;
-}
-.mock-field {
+.mock-window-bar {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  gap: 6px;
+  padding: 10px 12px;
   background: var(--surface);
-  color: var(--text-muted);
-  font-size: 0.85rem;
+  border-bottom: 1px solid var(--border);
 }
-.mock-field::after {           /* barrinha simulando o texto digitado */
-  content: "";
-  flex: 1;
-  height: 6px;
-  border-radius: 999px;
+.mock-window-bar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
   background: var(--border);
 }
-.mock-btn {
+.mock-window-bar span:first-child { background: var(--accent); }
+.mock-window-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 26px 20px;
+}
+.mock-window-body i {
+  font-size: 1.8rem;
+  color: var(--accent);
+}
+.mock-window-line {
   width: 100%;
-  padding: 8px;
-  border-radius: 8px;
-  background: var(--accent);
-  color: var(--on-accent);
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-align: center;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.mock-window-line.short { width: 60%; }
+
+/* Selo sobre o título do card de projeto (ex.: "Produto comercial · Em produção") */
+.projeto-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* ---------- STACK ---------- */
@@ -642,6 +655,71 @@ a {
   border: 1px solid var(--border);
   font-size: 0.82rem;
   color: var(--text-muted);
+}
+
+/* ---------- EXPERIÊNCIA & FORMAÇÃO ---------- */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.timeline-item {
+  padding: 22px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.timeline-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 16px;
+}
+.timeline-head h3 { font-size: var(--fs-h3); }
+.timeline-period {
+  flex-shrink: 0;
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.timeline-org {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.timeline-list {
+  margin-top: 12px;
+  padding-left: 20px;
+  color: var(--text-muted);
+}
+.timeline-list li + li { margin-top: 6px; }
+
+.formacao-grid {
+  display: grid;
+  gap: 24px;
+}
+.cert-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+.cert-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+.cert-list i {
+  color: var(--accent);
+  font-size: 1.1rem;
 }
 
 /* ---------- SOBRE ---------- */
@@ -750,11 +828,28 @@ a {
   .cards { grid-template-columns: repeat(2, 1fr); }
   .grid-projetos { grid-template-columns: repeat(2, 1fr); }
   .stack-grid { grid-template-columns: repeat(2, 1fr); }
+  .formacao-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); }
   .hero-buttons { gap: 14px; }
 }
 
-/* ≥ 900px: layout desktop — nav inline, hero/sobre em 2 colunas, 4 cards */
+/* ≥ 900px: layout desktop — hero/sobre em 2 colunas, 4 cards
+   (nav inline só entra num breakpoint maior — ver 1240px abaixo — porque
+   8 itens de menu + logo + CTA não cabem numa linha antes disso). */
 @media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(4, 1fr); }
+  /* 4 categorias → 2×2 no desktop (mais equilibrado que 3+1) */
+  .stack-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .hero .container,
+  .sobre .container {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+  .hero-img img { width: min(100%, 400px); }
+}
+
+/* ≥ 1240px: nav inline — só aqui logo + 8 itens de menu + CTA cabem
+   numa linha sem espremer o logo nem quebrar o botão "Fale comigo". */
+@media (min-width: 1240px) {
   .logo img { height: 54px; }
 
   .menu-toggle { display: none; }
@@ -771,16 +866,6 @@ a {
   .menu a { padding: 8px 14px; }
 
   .header .btn { display: inline-flex; }
-
-  .cards { grid-template-columns: repeat(4, 1fr); }
-  /* 4 categorias → 2×2 no desktop (mais equilibrado que 3+1) */
-  .stack-grid { grid-template-columns: repeat(2, 1fr); }
-
-  .hero .container,
-  .sobre .container {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  }
-  .hero-img img { width: min(100%, 400px); }
 }
 
 /* =========================================================================
@@ -852,9 +937,13 @@ a {
   line-height: 1.4;
 }
 
-@media (min-width: 900px) {
+/* ≥ 1240px: nav já está inline (ver breakpoint acima) — espaçamento generoso */
+@media (min-width: 1240px) {
   .header .container {
-    padding: 24px 5%;
+    /* Acima do --maxw do header (1320px), a largura trava — padding fixo
+       (em vez de %) evita desperdiçar espaço em telas bem largas, onde 5%
+       do viewport faria o CTA quebrar linha. */
+    padding: 24px clamp(20px, 2vw, 40px);
   }
 
   .logo img {
