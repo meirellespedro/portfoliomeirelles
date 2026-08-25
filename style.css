@@ -533,7 +533,7 @@ a {
     var(--surface-2);
 }
 
-/* Mockup de janela desktop (QAP PROEIS) — produto comercial fechado, sem capa real */
+/* Mockup de janela desktop (AutoForm Desktop) — produto comercial fechado, sem capa real */
 .mock-window {
   display: flex;
   flex-direction: column;
