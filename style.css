@@ -533,7 +533,7 @@ a {
     var(--surface-2);
 }
 
-/* Mockup de janela desktop (AutoForm Desktop) — produto comercial fechado, sem capa real */
+/* Mockup de janela desktop (AutoForm Desktop) — app desktop fechado, sem capa real */
 .mock-window {
   display: flex;
   flex-direction: column;
@@ -578,7 +578,7 @@ a {
 }
 .mock-window-line.short { width: 60%; }
 
-/* Selo sobre o título do card de projeto (ex.: "Produto comercial · Em produção") */
+/* Selo sobre o título do card de projeto (ex.: "Automação de Preenchimento de Formulários Web") */
 .projeto-badge {
   display: inline-block;
   margin-bottom: 8px;
