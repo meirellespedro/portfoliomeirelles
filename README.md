@@ -2,7 +2,9 @@
 
 Site pessoal de Pedro Meirelles, desenvolvedor Full-Stack e estudante de Análise e Desenvolvimento de Sistemas (UERJ).
 
-**Live:** https://meirellespedro.github.io/portfoliomeirelles/
+🔗 **[Ver site ao vivo](https://meirellespedro.github.io/portfoliomeirelles/)**
+
+![Preview do portfólio](img/preview-hero.png)
 
 ## Sobre
 
@@ -19,6 +21,8 @@ Vitrine dos projetos, stack e experiência de Pedro Meirelles, com download dire
 - Respeita `prefers-reduced-motion` para quem pediu menos movimento
 
 ## Tecnologias
+
+<img src="https://skillicons.dev/icons?i=html,css,js,github&theme=dark" alt="HTML5, CSS3, JavaScript, GitHub Pages" />
 
 - HTML5 semântico
 - CSS3 (variáveis, grid, flexbox, media queries)
