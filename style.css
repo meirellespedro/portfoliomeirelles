@@ -734,6 +734,9 @@ a {
 .sobre-img { display: flex; justify-content: center; }
 .sobre-img img {
   width: min(100%, 340px);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 15%;
   border-radius: var(--radius);
   border: 1px solid var(--border);
 }
